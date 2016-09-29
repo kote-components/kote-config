@@ -2,4 +2,7 @@ install:
 	composer install
 
 dump:
-	composer dump-autoloader
+	composer dump-autoload
+
+test:
+	composer exec phpunit

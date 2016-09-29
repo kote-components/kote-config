@@ -8,5 +8,16 @@
       "name": "Roman Lakhtadyr",
       "email": "roman.lakhtadyr@gmail.com"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kote\\Config\\tests\\": "tests/"
+    },
+    "files": [
+      "src/Config.php"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.5"
+  }
 }
