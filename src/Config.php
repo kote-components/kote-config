@@ -62,6 +62,5 @@ function makeValueAccessor($key)
 function getValue(array $config, $key, $default = null)
 {
     $valueAccessor = makeValueAccessor($key);
-
     return $valueAccessor($config) ?: $default;
 }
