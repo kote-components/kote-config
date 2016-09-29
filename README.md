@@ -1,0 +1,2 @@
+# Kote-Config
+Configuration Manager

@@ -1,0 +1,12 @@
+{
+  "name": "pldin601/kote-config",
+  "description": "Configuration Manager",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roman Lakhtadyr",
+      "email": "roman.lakhtadyr@gmail.com"
+    }
+  ]
+}
