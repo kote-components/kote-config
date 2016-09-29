@@ -5,11 +5,13 @@ Configuration Manager
 ## Usage
 
 ```php
-use Kote\Config\Config;
+use Kote\Config;
 
-$config = Config\getConfig("configPath"); // Read configuration from `configPath`
+// Get configuration from `configPath`
+$config = Config\getConfig("configPath");
 
-$value  = Config\getValue($config, "file.key", "defaultValue"); // Gets value associated with given key or returns `defaultValue` if no value
+// Get value associated with given key or returns `defaultValue` if no value
+$value  = Config\getValue($config, "file.key", "defaultValue");
 ```
 
 ## Structure
