@@ -14,7 +14,8 @@
       "Kote\\Config\\tests\\": "tests/"
     },
     "files": [
-      "src/Config.php"
+      "src/Config.php",
+      "src/Utils.php"
     ]
   },
   "require-dev": {

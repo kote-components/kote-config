@@ -8,6 +8,8 @@
 
 namespace Kote\Config;
 
+use function Kote\Config\Utils\absolutePathMaker;
+
 const SEPARATOR = '.';
 
 /**
@@ -18,19 +20,21 @@ const SEPARATOR = '.';
  */
 function getConfig($configDir)
 {
-    $absFilePath = function ($file) use ($configDir) {
-        return $configDir . DIRECTORY_SEPARATOR . $file;
+    $absFilePath = absolutePathMaker($configDir);
+
+    $isValidConfigFile = function ($file) use ($configDir) {
+        return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == "php";
     };
-    $isValidConfigFile = function ($file) use ($configDir, $absFilePath) {
-        return is_file($absFilePath($file)) && pathinfo($file, PATHINFO_EXTENSION) == "php";
-    };
-    $filesReduce = function ($acc, $file) use ($configDir, $absFilePath) {
-        $config = require $absFilePath($file);
+
+    $filesReduce = function ($acc, $file) use ($configDir) {
+        $config = require $file;
         $filename = pathinfo($file, PATHINFO_FILENAME);
         $acc[$filename] = $config;
         return $acc;
     };
-    $files = array_filter(scandir($configDir), $isValidConfigFile);
+
+    $files = array_filter(array_map($absFilePath, scandir($configDir)), $isValidConfigFile);
+
     return array_reduce($files, $filesReduce, []);
 }
 
