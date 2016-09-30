@@ -1,16 +1,15 @@
 # Kote-Config
 [![Build Status](https://travis-ci.org/kote-components/kote-config.svg?branch=master)](https://travis-ci.org/kote-components/kote-config)
-[![Code Climate](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/badges/19fda0eff80b9527ef5f/gpa.svg)](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/feed)
-[![Test Coverage](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/badges/19fda0eff80b9527ef5f/coverage.svg)](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/kote-components/kote-config/badge.svg)](https://coveralls.io/github/kote-components/kote-config)
 
 Kote Configuration Manager
 
-## Formats
+## Configuration Formats
 Supported formats: `PHP` and `JSON`.
 
 ## Usage
 
-Let you have configuration files in configuration folder `/path/to/config`:
+Let's say you have configuration files in configuration folder `/path/to/config`:
 
 ```
 config1.php
