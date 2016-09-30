@@ -10,8 +10,5 @@ autoload:
 test:
 	composer exec phpunit -- --color tests
 
-report:
-	composer exec 'coveralls -v'
-
 lint:
 	composer exec 'phpcs --standard=PSR2 src tests'
