@@ -48,6 +48,14 @@ class ConfigTest extends TestCase
     }
 
     /**
+     * @expectedException \Exception
+     */
+    public function testWrongFormat()
+    {
+        getConfig(__DIR__, 'wrong');
+    }
+
+    /**
      * @param $config
      * @depends testPhpConfig
      */
