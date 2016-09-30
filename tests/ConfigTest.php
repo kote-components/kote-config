@@ -14,11 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 class ConfigTest extends TestCase
 {
-    public function setUp()
-    {
-
-    }
-
     public function testConfig()
     {
         $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config";
