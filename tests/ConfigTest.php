@@ -14,10 +14,10 @@ use PHPUnit\Framework\TestCase;
 
 class ConfigTest extends TestCase
 {
-    public function testConfig()
+    public function testPhpConfig()
     {
-        $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config";
-        $config = getConfig($configDir);
+        $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "php";
+        $config = getConfig($configDir, \Kote\Config\Formats\PHP);
 
         $this->assertTrue(is_array($config));
         $this->assertTrue(is_array(getValue($config, "app")));
@@ -34,9 +34,22 @@ class ConfigTest extends TestCase
         return $config;
     }
 
+    public function testJsonConfig()
+    {
+        $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "json";
+        $config = getConfig($configDir, \Kote\Config\Formats\JSON);
+
+        $this->assertTrue(is_array($config));
+        $this->assertTrue(is_array(getValue($config, "app")));
+
+        $this->assertEquals("bar", getValue($config, "app.foo"));
+        $this->assertEquals("it", getValue($config, "app.go.deep"));
+        $this->assertEquals("world", getValue($config, "app.go.deeper.hello"));
+    }
+
     /**
      * @param $config
-     * @depends testConfig
+     * @depends testPhpConfig
      */
     public function testDefaultValue($config)
     {

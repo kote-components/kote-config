@@ -14,7 +14,11 @@
       "Kote\\Config\\tests\\": "tests/"
     },
     "files": [
-      "src/Config.php"
+      "src/Config.php",
+      "src/Formats.php",
+
+      "src/Parsers/PHP.php",
+      "src/Parsers/JSON.php"
     ]
   },
   "require": {

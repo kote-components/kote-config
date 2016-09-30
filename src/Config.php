@@ -8,27 +8,32 @@
 
 namespace Kote\Config;
 
+use Kote\Config\Formats;
+
 use function Kote\Utils\AbsolutePath\absolutePathMaker;
 
 const SEPARATOR = '.';
 
 /**
- * Returns configuration represented as array.
+ * Scan directory for configuration files and return configuration represented as array.
  *
- * @param $configDir
+ * @param string $configDir
+ * @param string $format
  * @return array
  */
-function getConfig($configDir)
+function getConfig($configDir, $format = Formats\PHP)
 {
+    $parser = Formats\getParser($format);
+
     $absFilePath = absolutePathMaker($configDir);
 
-    $isValidConfigFile = function ($file) use ($configDir) {
-        return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == "php";
+    $isValidConfigFile = function ($file) use ($configDir, $format) {
+        return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == $format;
     };
 
-    $filesReduce = function ($acc, $file) use ($configDir) {
-        $config = require $file;
+    $filesReduce = function ($acc, $file) use ($configDir, $parser) {
         $filename = pathinfo($file, PATHINFO_FILENAME);
+        $config = $parser($file);
         return array_merge($acc, [$filename => $config]);
     };
 
