@@ -1,6 +1,7 @@
 # Kote-Config
 [![Build Status](https://travis-ci.org/kote-components/kote-config.svg?branch=master)](https://travis-ci.org/kote-components/kote-config)
 [![Coverage Status](https://coveralls.io/repos/github/kote-components/kote-config/badge.svg)](https://coveralls.io/github/kote-components/kote-config)
+[![StyleCI](https://styleci.io/repos/69541489/shield?branch=master)](https://styleci.io/repos/69541489)
 
 Kote Configuration Manager
 
