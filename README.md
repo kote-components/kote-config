@@ -8,14 +8,23 @@ Configuration Manager
 
 ## Usage
 
+Let you have configuration files in configuration folder `/path/to/config`:
+
+```
+config1.php
+config2.php
+other.php
+app.php
+```
+
 ```php
 use Kote\Config;
 
-// Get configuration from `configPath`
-$config = Config\getConfig("configPath");
+$config = Config\getConfig("/path/to/config");
 
-// Get value associated with given key or returns `defaultValue` if no value
-$value  = Config\getValue($config, "file.key", "defaultValue");
+$someKey = Config\getValue($config, "config1.someKey", "defaultValue");
+$key = Config\getValue($config, "other.key");
+$token = Config\getValue($config, "app.token");
 ```
 
 ## Structure

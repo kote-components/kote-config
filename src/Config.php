@@ -45,7 +45,7 @@ function getConfig($configDir, $format = Formats\PHP)
 }
 
 /**
- * Makes recursive value accessor.
+ * Make recursive value accessor.
  *
  * @param $key
  * @return \Closure
@@ -62,7 +62,7 @@ function makeValueAccessor($key)
 }
 
 /**
- * Gets value from given configuration.
+ * Get value from given configuration.
  *
  * @param $config
  * @param $key
