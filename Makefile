@@ -11,7 +11,7 @@ test:
 	composer exec phpunit -- --color tests
 
 report:
-	composer exec test-reporter
+	composer exec coveralls
 
 lint:
 	composer exec 'phpcs --standard=PSR2 src tests'

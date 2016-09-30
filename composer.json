@@ -22,7 +22,8 @@
     ]
   },
   "require": {
-    "kote-components/kote-absolute-path": "^0.1"
+    "kote-components/kote-absolute-path": "^0.1",
+    "satooshi/php-coveralls": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.5",
