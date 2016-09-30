@@ -3,8 +3,10 @@
 [![Code Climate](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/badges/19fda0eff80b9527ef5f/gpa.svg)](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/feed)
 [![Test Coverage](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/badges/19fda0eff80b9527ef5f/coverage.svg)](https://codeclimate.com/repos/57ee25d08a3bb33c48001436/coverage)
 
+Kote Configuration Manager
 
-Configuration Manager
+## Formats
+Supported formats: `PHP` and `JSON`.
 
 ## Usage
 
@@ -17,16 +19,29 @@ other.php
 app.php
 ```
 
+With content like:
+
+```php
+<?php
+
+return [
+    'someKey' => 'Some Value',
+    'otherKey' => 'Other Value',
+    'deep' => [
+        "key" => "value"
+    ]
+];
+```
+
+Example of usage:
+
 ```php
 use Kote\Config;
 
-$config = Config\getConfig("/path/to/config");
+$config = Config\getConfig("/path/to/config", Config\Formats\PHP);
 
 $someKey = Config\getValue($config, "config1.someKey", "defaultValue");
 $key = Config\getValue($config, "other.key");
 $token = Config\getValue($config, "app.token");
 ```
 
-## Structure
-
-Will be later...
