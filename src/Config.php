@@ -8,7 +8,7 @@
 
 namespace Kote\Config;
 
-use function Kote\Config\Utils\absolutePathMaker;
+use function Kote\Utils\AbsolutePath\absolutePathMaker;
 
 const SEPARATOR = '.';
 
@@ -29,13 +29,14 @@ function getConfig($configDir)
     $filesReduce = function ($acc, $file) use ($configDir) {
         $config = require $file;
         $filename = pathinfo($file, PATHINFO_FILENAME);
-        $acc[$filename] = $config;
-        return $acc;
+        return array_merge($acc, [$filename => $config]);
     };
 
-    $files = array_filter(array_map($absFilePath, scandir($configDir)), $isValidConfigFile);
+    $filesList = scandir($configDir);
+    $absoluteList = array_map($absFilePath, $filesList);
+    $filteredList = array_filter($absoluteList, $isValidConfigFile);
 
-    return array_reduce($files, $filesReduce, []);
+    return array_reduce($filteredList, $filesReduce, []);
 }
 
 /**

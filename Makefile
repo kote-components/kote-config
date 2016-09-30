@@ -1,8 +1,17 @@
 install:
-	composer install
+	composer install --prefer-dist
 
-dump:
+update:
+	composer update --prefer-dist
+
+autoload:
 	composer dump-autoload
 
 test:
-	composer exec phpunit
+	composer exec phpunit -- --color tests
+
+report:
+	composer exec test-reporter
+
+lint:
+	composer exec 'phpcs --standard=PSR2 src tests'
