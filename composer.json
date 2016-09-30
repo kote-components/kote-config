@@ -28,11 +28,5 @@
     "phpunit/phpunit": "^5.5",
     "squizlabs/php_codesniffer": "^2.6",
     "satooshi/php-coveralls": "^1.0"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kote-components/kote-absolute-path"
-    }
-  ]
+  }
 }

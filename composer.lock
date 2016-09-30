@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1af2c86ab9ff6b28f0b77fef5a173b98",
-    "content-hash": "8d1ebd29bc6dd6a2fbcbb3b7e8289c98",
+    "hash": "28001b41a90d936d512708c92da46c3a",
+    "content-hash": "a536727125c9904b9000818aada9959d",
     "packages": [
         {
             "name": "kote-components/kote-absolute-path",
