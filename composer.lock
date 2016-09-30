@@ -4,51 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28001b41a90d936d512708c92da46c3a",
-    "content-hash": "a536727125c9904b9000818aada9959d",
-    "packages": [
-        {
-            "name": "kote-components/kote-absolute-path",
-            "version": "v0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kote-components/kote-absolute-path.git",
-                "reference": "97bf2e764064cd9c1370382b4bf81c794d8a214d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kote-components/kote-absolute-path/zipball/97bf2e764064cd9c1370382b4bf81c794d8a214d",
-                "reference": "97bf2e764064cd9c1370382b4bf81c794d8a214d",
-                "shasum": ""
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "^0.3.2",
-                "phpunit/phpunit": "^5.5",
-                "squizlabs/php_codesniffer": "^2.6"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/AbsolutePath.php"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Lakhtadyr",
-                    "email": "roman.lakhtadyr@gmail.com"
-                }
-            ],
-            "description": "Function made to convert relative paths to absolute paths",
-            "support": {
-                "source": "https://github.com/kote-components/kote-absolute-path/tree/v0.1",
-                "issues": "https://github.com/kote-components/kote-absolute-path/issues"
-            },
-            "time": "2016-09-30 08:02:05"
-        }
-    ],
+    "hash": "15b0639e8b7e53bf2b31d08d66a8ae37",
+    "content-hash": "cf28197aae286b9dcfd610e7555d527a",
+    "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",

@@ -25,7 +25,9 @@ function getConfig($configDir, $format = Formats\PHP)
 {
     $parser = Formats\getParser($format);
 
-    $absFilePath = absolutePathMaker($configDir);
+    $absFilePath = function ($file) use ($configDir) {
+        return $configDir . DIRECTORY_SEPARATOR . $file;
+    };
 
     $isValidConfigFile = function ($file) use ($configDir, $format) {
         return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == $format;

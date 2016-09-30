@@ -6,7 +6,7 @@
  * Time: 10:27 AM
  */
 
-namespace Kote\Config\tests;
+namespace tests;
 
 use function Kote\Config\getValue;
 use function Kote\Config\getConfig;
