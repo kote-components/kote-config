@@ -52,7 +52,9 @@ function makeValueAccessor($key)
 {
     $path = explode(SEPARATOR, $key);
     $getValue = function ($config, $value) {
-        return array_key_exists($value, $config) ? $config[$value] : null;
+        return is_array($config) && array_key_exists($value, $config)
+            ? $config[$value]
+            : null;
     };
     return function ($config) use ($path, $getValue) {
         return array_reduce($path, $getValue, $config);

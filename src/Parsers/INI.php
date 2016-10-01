@@ -16,5 +16,5 @@ const PARSER = __NAMESPACE__ . '\parse';
  */
 function parse($filename)
 {
-    return parse_ini_file($filename);
+    return parse_ini_file($filename, true);
 }

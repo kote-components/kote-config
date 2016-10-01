@@ -15,7 +15,8 @@
       "src/Formats.php",
 
       "src/Parsers/PHP.php",
-      "src/Parsers/JSON.php"
+      "src/Parsers/JSON.php",
+      "src/Parsers/INI.php"
     ]
   },
   "require": {

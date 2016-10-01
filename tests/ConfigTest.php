@@ -47,6 +47,23 @@ class ConfigTest extends TestCase
         $this->assertEquals("world", getValue($config, "app.go.deeper.hello"));
     }
 
+    public function testIniConfig()
+    {
+        $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "ini";
+        $config = getConfig($configDir, \Kote\Config\Formats\INI);
+
+        $this->assertTrue(is_array($config));
+        $this->assertTrue(is_array(getValue($config, "app")));
+
+        $this->assertEquals("bar", getValue($config, "app.common.foo"));
+        $this->assertEquals(10, getValue($config, "app.common.a"));
+
+        $this->assertTrue(is_array(getValue($config, "app.common.arr")));
+        $this->assertEquals([1, 2], getValue($config, "app.common.arr"));
+
+        $this->assertEquals("y", getValue($config, "app.group2.x"));
+    }
+
     /**
      * @expectedException \Exception
      */
