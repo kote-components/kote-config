@@ -6,7 +6,7 @@
 Kote Configuration Manager
 
 ## Configuration Formats
-Supported formats: `PHP` and `JSON`.
+Supported formats: `PHP`, `JSON` and `INI`.
 
 ## Usage
 

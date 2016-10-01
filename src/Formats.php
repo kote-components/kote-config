@@ -10,7 +10,7 @@ namespace Kote\Config\Formats;
 
 const PHP = 'php';
 const JSON = 'json';
-
+const INI = 'ini';
 
 /**
  * Get parser for given file format.
@@ -26,6 +26,8 @@ function getParser($format)
             return \Kote\Config\Parsers\PHP\PARSER;
         case JSON:
             return \Kote\Config\Parsers\JSON\PARSER;
+        case INI:
+            return \Kote\Config\Parsers\INI\PARSER;
         default:
             throw new \Exception("File format '$format' is not supported.");
     }

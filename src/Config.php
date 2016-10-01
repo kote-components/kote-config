@@ -29,10 +29,6 @@ function getConfig($configDir, $format = Formats\PHP)
         return $configDir . DIRECTORY_SEPARATOR . $file;
     };
 
-    $isValidConfigFile = function ($file) use ($configDir, $format) {
-        return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == $format;
-    };
-
     $filesReduce = function ($acc, $file) use ($configDir, $parser) {
         $filename = pathinfo($file, PATHINFO_FILENAME);
         $config = $parser($file);
@@ -41,7 +37,7 @@ function getConfig($configDir, $format = Formats\PHP)
 
     $filesList = scandir($configDir);
     $absoluteList = array_map($absFilePath, $filesList);
-    $filteredList = array_filter($absoluteList, $isValidConfigFile);
+    $filteredList = array_filter($absoluteList, isValidConfigFile($format));
 
     return array_reduce($filteredList, $filesReduce, []);
 }
@@ -66,13 +62,26 @@ function makeValueAccessor($key)
 /**
  * Get value from given configuration.
  *
- * @param $config
- * @param $key
- * @param null $default
- * @return null
+ * @param array $config
+ * @param string $key
+ * @param mixed $default
+ * @return mixed
  */
 function getValue(array $config, $key, $default = null)
 {
     $valueAccessor = makeValueAccessor($key);
     return $valueAccessor($config) ?: $default;
+}
+
+/**
+ * Test config file is valid.
+ *
+ * @param string $format
+ * @return \Closure
+ */
+function isValidConfigFile($format)
+{
+    return function ($file) use ($format) {
+        return is_file($file) && pathinfo($file, PATHINFO_EXTENSION) == $format;
+    };
 }
