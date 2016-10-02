@@ -1,6 +1,6 @@
 {
-  "name": "kote-components/kote-config",
-  "description": "Configuration Manager",
+  "name": "nerd-components/config",
+  "description": "Simple stateless configuration manager",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
