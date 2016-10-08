@@ -6,7 +6,7 @@
  * Time: 12:19 PM
  */
 
-namespace Kote\Config\Parsers\JSON;
+namespace Nerd\Config\Parsers\JSON;
 
 const PARSER = __NAMESPACE__ . '\parse';
 

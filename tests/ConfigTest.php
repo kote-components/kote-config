@@ -8,8 +8,8 @@
 
 namespace tests;
 
-use function Kote\Config\getValue;
-use function Kote\Config\getConfig;
+use function Nerd\Config\getValue;
+use function Nerd\Config\getConfig;
 use PHPUnit\Framework\TestCase;
 
 class ConfigTest extends TestCase
@@ -17,7 +17,7 @@ class ConfigTest extends TestCase
     public function testPhpConfig()
     {
         $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "php";
-        $config = getConfig($configDir, \Kote\Config\Formats\PHP);
+        $config = getConfig($configDir, \Nerd\Config\Formats\PHP);
 
         $this->assertTrue(is_array($config));
         $this->assertTrue(is_array(getValue($config, "app")));
@@ -37,7 +37,7 @@ class ConfigTest extends TestCase
     public function testJsonConfig()
     {
         $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "json";
-        $config = getConfig($configDir, \Kote\Config\Formats\JSON);
+        $config = getConfig($configDir, \Nerd\Config\Formats\JSON);
 
         $this->assertTrue(is_array($config));
         $this->assertTrue(is_array(getValue($config, "app")));
@@ -50,7 +50,7 @@ class ConfigTest extends TestCase
     public function testIniConfig()
     {
         $configDir = __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "ini";
-        $config = getConfig($configDir, \Kote\Config\Formats\INI);
+        $config = getConfig($configDir, \Nerd\Config\Formats\INI);
 
         $this->assertTrue(is_array($config));
         $this->assertTrue(is_array(getValue($config, "app")));

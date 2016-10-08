@@ -1,7 +1,8 @@
 {
   "name": "nerd-components/config",
   "description": "Simple stateless configuration manager",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "MIT",
   "authors": [
     {
@@ -20,7 +21,6 @@
     ]
   },
   "require": {
-
   },
   "require-dev": {
     "phpunit/phpunit": "^5.5",

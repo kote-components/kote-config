@@ -6,11 +6,9 @@
  * Time: 10:31 AM
  */
 
-namespace Kote\Config;
+namespace Nerd\Config;
 
-use Kote\Config\Formats;
-
-use function Kote\Utils\AbsolutePath\absolutePathMaker;
+use Nerd\Config\Formats;
 
 const SEPARATOR = '.';
 

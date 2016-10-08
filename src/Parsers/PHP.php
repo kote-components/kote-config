@@ -6,7 +6,7 @@
  * Time: 12:09 PM
  */
 
-namespace Kote\Config\Parsers\PHP;
+namespace Nerd\Config\Parsers\PHP;
 
 const PARSER = __NAMESPACE__ . '\parse';
 

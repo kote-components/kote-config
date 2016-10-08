@@ -6,7 +6,7 @@
  * Time: 12:06 PM
  */
 
-namespace Kote\Config\Formats;
+namespace Nerd\Config\Formats;
 
 const PHP = 'php';
 const JSON = 'json';
@@ -23,11 +23,11 @@ function getParser($format)
 {
     switch ($format) {
         case PHP:
-            return \Kote\Config\Parsers\PHP\PARSER;
+            return \Nerd\Config\Parsers\PHP\PARSER;
         case JSON:
-            return \Kote\Config\Parsers\JSON\PARSER;
+            return \Nerd\Config\Parsers\JSON\PARSER;
         case INI:
-            return \Kote\Config\Parsers\INI\PARSER;
+            return \Nerd\Config\Parsers\INI\PARSER;
         default:
             throw new \Exception("File format '$format' is not supported.");
     }

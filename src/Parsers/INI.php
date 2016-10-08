@@ -6,7 +6,7 @@
  * Time: 22:48
  */
 
-namespace Kote\Config\Parsers\INI;
+namespace Nerd\Config\Parsers\INI;
 
 const PARSER = __NAMESPACE__ . '\parse';
 
